@@ -93,7 +93,8 @@ def extract_contours_from_image(img_path: str, threshold_val: int = 127):
         gray = cv2.cvtColor(bgr, cv2.COLOR_BGR2GRAY)
         
         # Binarize: text should be white (255), background black (0)
-        _, binary = cv2.threshold(gray, threshold_val, 255, cv2.THRESH_BINARY_INV)
+        # Use Otsu's thresholding dynamically
+        _, binary = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
         
         # Mask with alpha channel to ensure transparent pixels are black
         binary = cv2.bitwise_and(binary, alpha)
@@ -105,7 +106,8 @@ def extract_contours_from_image(img_path: str, threshold_val: int = 127):
             gray = img
             
         # Binarize assuming black/dark text on white background
-        _, binary = cv2.threshold(gray, threshold_val, 255, cv2.THRESH_BINARY_INV)
+        # Use Otsu's thresholding dynamically
+        _, binary = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
 
     # Find contours with hierarchy (RETR_CCOMP finds outer boundaries and 1-level holes inside them)
     contours, hierarchy = cv2.findContours(binary, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)
