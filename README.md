@@ -23,6 +23,7 @@ The following fictional scripts are currently included in this repository:
 | **Sumeru Language Alphabet** | `sumeru_languange_alfabet.ttf` | *Genshin Impact (Sumeru)* | `A-Z`, `a-z` | Case-insensitive (mapped same) |
 | **Tate No Yusha Alphabet** | `tate-no-yusha-alphabet.ttf` | *The Rising of the Shield Hero* | `A-Z`, `a-z` | Case-insensitive (mapped same) |
 | **Teyvat Language Alphabet** | `teyvat_languange_alfabet.ttf` | *Genshin Impact (Teyvat)* | `A-Z`, `a-z` | Case-insensitive (mapped same) |
+| **Zozan Runes** | `Zozan_runes-Regular_by_simon _secretsneakyalt.ttf` | - | `A-Z`, `a-z` | Yes (Dual-case support) |
 
 > [!NOTE]
 > *Case-insensitive* indicates that only one set of character images (usually uppercase) was provided. The compiler automatically maps these glyphs to both uppercase and lowercase codes so typing in any casing renders correctly.
